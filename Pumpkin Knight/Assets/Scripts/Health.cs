@@ -3,14 +3,14 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    private int currentHealth;
+    public int CurrentHealth { get; private set; }
     private bool isDead = false;
 
     private Animator animator;
 
     private void Awake()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         animator = GetComponent<Animator>();
     }
 
@@ -18,10 +18,10 @@ public class Health : MonoBehaviour
     {
         if (isDead) return;
 
-        currentHealth -= amount;
-        Debug.Log($"{gameObject.name} took {amount} damage! ({currentHealth}/{maxHealth})");
+        CurrentHealth -= amount;
+        Debug.Log($"{gameObject.name} took {amount} damage! ({CurrentHealth}/{maxHealth})");
 
-        if(currentHealth <= 0)
+        if(CurrentHealth <= 0)
         {
             Die();
         }     
