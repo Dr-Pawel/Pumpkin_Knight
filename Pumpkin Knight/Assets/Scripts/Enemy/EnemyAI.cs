@@ -7,10 +7,15 @@ public class EnemyAI : MonoBehaviour
     private GameObject target;
     private Health playerHealth;
     private Transform playerPosition;
+    [SerializeField] Health health;
     [SerializeField] private float attackDistance;
+    [SerializeField] private float ChaseDistance;
 
     [SerializeField] private NavMeshAgent enemyAgent;
+    [SerializeField] private Animator animator;
     private float distanceToPlayer;
+    
+
 
     private bool isAttacking;
     [SerializeField] private float attackCooldown = 2f;
@@ -24,18 +29,26 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+        if(health.isDead == true)
+        {
+            return;
+        }
         if (target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player");
             if (target != null) playerPosition = target.transform;
             return;
         }
+        if(enemyAgent.isStopped)
+        {
+            animator.SetBool("isMoving", false);
+        }
         distanceToPlayer = Vector3.Distance(enemyAgent.transform.position, playerPosition.position);
         if (distanceToPlayer <= attackDistance)
         {
             AttackPlayer();
         }
-        else if (distanceToPlayer > attackDistance + 1f)
+        else if (distanceToPlayer < ChaseDistance)
         {
             ChasePlayer();
         }
@@ -44,15 +57,17 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         enemyAgent.isStopped = false;
+        animator.SetBool("isMoving", true);
         enemyAgent.destination = playerPosition.position;
     }
 
     private void AttackPlayer()
     {
-        
         if (!isAttacking)
         {
             isAttacking = true;
+            int randomAttack = Random.Range(0, 2);
+            animator.SetTrigger(randomAttack == 0 ? "Attack1" : "Attack2");
             enemyAgent.isStopped = true;
             Vector3 lookDirection = (playerPosition.position - transform.position).normalized;
             lookDirection.y = 0;
@@ -65,6 +80,7 @@ public class EnemyAI : MonoBehaviour
             StartCoroutine(ResetAttack());
         }
     }
+
 
     private IEnumerator ResetAttack()
     {

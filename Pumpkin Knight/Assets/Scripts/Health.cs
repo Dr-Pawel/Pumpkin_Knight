@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] public int maxHealth  = 100;
     public int CurrentHealth { get; private set; }
-    private bool isDead = false;
+    public bool isDead { get; set; }
+    [SerializeField] private bool isAPlayer = false;
 
-    private Animator animator;
+    [SerializeField]private Animator animator;
+    [SerializeField] PlayerHealthBar healthBar;
 
     private void Awake()
     {
         CurrentHealth = maxHealth;
-        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int amount)
@@ -20,8 +21,12 @@ public class Health : MonoBehaviour
 
         CurrentHealth -= amount;
         Debug.Log($"{gameObject.name} took {amount} damage! ({CurrentHealth}/{maxHealth})");
+        if(isAPlayer)
+        {
+            healthBar.HealthBarUpdate();
+        }
 
-        if(CurrentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Die();
         }     
@@ -31,11 +36,10 @@ public class Health : MonoBehaviour
         isDead = true;
         Debug.Log($"{gameObject.name} died!");
 
-        //if (animator != null)
-        //{
-        //    animator.SetTrigger("Die");
-        //}
-        Destroy(gameObject, 2f);
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
     }
 
 
