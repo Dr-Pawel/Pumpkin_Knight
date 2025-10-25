@@ -21,6 +21,10 @@ public class Health : MonoBehaviour
 
         CurrentHealth -= amount;
         Debug.Log($"{gameObject.name} took {amount} damage! ({CurrentHealth}/{maxHealth})");
+        if(!isAPlayer)
+        {
+            animator.SetTrigger("TakeDamage");
+        }
         if(isAPlayer)
         {
             healthBar.HealthBarUpdate();

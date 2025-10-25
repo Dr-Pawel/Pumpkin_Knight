@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.02
+  m_FogDensity: 0.015
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -2579,12 +2579,24 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.673576
       objectReference: {fileID: 0}
     - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.308065
+      value: 21.407
       objectReference: {fileID: 0}
     - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5278,6 +5290,18 @@ PrefabInstance:
     - target: {fileID: 2430841227151519838, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
       propertyPath: maxHealth
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12646,6 +12670,18 @@ PrefabInstance:
     - target: {fileID: 2430841227151519838, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
       propertyPath: maxHealth
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5882527219746938229, guid: 8f451b378012d014b842577c5bdedd7e, type: 3}
       propertyPath: m_LocalPosition.x
