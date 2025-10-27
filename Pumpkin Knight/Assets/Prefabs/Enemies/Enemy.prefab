@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5882527219746938229}
   - component: {fileID: 597239571503512780}
   - component: {fileID: 1401006823139724662}
-  - component: {fileID: 2430841227151519838}
   - component: {fileID: 1285480833374638768}
   - component: {fileID: 1696433131626798366}
+  - component: {fileID: 2900849059779015331}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -29,9 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530788667577963166}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000009536741}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.5, z: 6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6228820631821898192}
@@ -68,22 +68,6 @@ CapsuleCollider:
   m_Height: 1.8545837
   m_Direction: 1
   m_Center: {x: 0.013204753, y: -0.07270813, z: 6.757561e-16}
---- !u!114 &2430841227151519838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530788667577963166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beef22d3d20168f4d868f53b0a652028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 40
-  isAPlayer: 0
-  animator: {fileID: 7858933492693052540}
-  healthBar: {fileID: 0}
 --- !u!114 &1285480833374638768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2104c76ada7a61747a536d793adf9f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 2430841227151519838}
+  health: {fileID: 2900849059779015331}
   attackDistance: 2.5
   ChaseDistance: 15
   enemyAgent: {fileID: 1696433131626798366}
@@ -124,6 +108,20 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2900849059779015331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530788667577963166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d5ed8a235fecf45985141eba86550f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7858933492693052540}
+  maxHealth: 40
 --- !u!1001 &6561327689533520167
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,41 +1,16 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
-    [SerializeField] public int maxHealth  = 100;
-    public int CurrentHealth { get; private set; }
+    
+    public int CurrentHealth { get; set; }
     public bool isDead { get; set; }
-    [SerializeField] private bool isAPlayer = false;
 
-    [SerializeField]private Animator animator;
-    [SerializeField] PlayerHealthBar healthBar;
+    [SerializeField] public Animator animator;
+    
+    public abstract void TakeDamage(int amount);
 
-    private void Awake()
-    {
-        CurrentHealth = maxHealth;
-    }
-
-    public void TakeDamage(int amount)
-    {
-        if (isDead) return;
-
-        CurrentHealth -= amount;
-        Debug.Log($"{gameObject.name} took {amount} damage! ({CurrentHealth}/{maxHealth})");
-        if(!isAPlayer)
-        {
-            animator.SetTrigger("TakeDamage");
-        }
-        if(isAPlayer)
-        {
-            healthBar.HealthBarUpdate();
-        }
-
-        if (CurrentHealth <= 0)
-        {
-            Die();
-        }     
-    }
-    private void Die()
+    public void Die()
     {
         isDead = true;
         Debug.Log($"{gameObject.name} died!");

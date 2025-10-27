@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    [SerializeField] private Health health;
+    [SerializeField] private PlayerHealth health;
     [SerializeField] private Slider healthSlider;
 
     private void Start()

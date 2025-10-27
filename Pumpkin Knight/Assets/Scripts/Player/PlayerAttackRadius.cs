@@ -17,7 +17,7 @@ public class PlayerAttackRadius : MonoBehaviour
         if(other.CompareTag("Enemy") && !hitEnemies.Contains(other.gameObject))
         {
             hitEnemies.Add(other.gameObject);
-            Health enemyHealth = other.GetComponent<Health>();
+            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
 
             if (enemyHealth != null)
             {

@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
     private GameObject target;
     private Health playerHealth;
     private Transform playerPosition;
-    [SerializeField] Health health;
+    [SerializeField] EnemyHealth health;
     [SerializeField] private float attackDistance;
     [SerializeField] private float ChaseDistance;
 
