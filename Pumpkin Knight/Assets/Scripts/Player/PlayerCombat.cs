@@ -11,6 +11,11 @@ public class PlayerCombat : MonoBehaviour
 
     [SerializeField] private GameObject AttackRadius;
 
+    [Header("ComboSetup")]
+    private bool canDoNextAttack = false;
+    [SerializeField] private int comboStep = 0;
+    private float comboResetTimer = 1f;
+
     private void Start()
     {
         playerInputHandler = PlayerInputHandlerLite.Instance;
@@ -23,10 +28,20 @@ public class PlayerCombat : MonoBehaviour
 
     private void Attack()
     {
-        if(playerInputHandler.AttackTriggered && !isAttacking)
+        if (playerInputHandler.AttackTriggered)
         {
-            IsAttacking();
-            playerAnimator.SetTrigger("Attack");
+            if (!isAttacking )
+            {
+                isAttacking = true;
+                comboStep = 1;
+                playerAnimator.SetTrigger("Attack1");
+            }
+            else if (canDoNextAttack && comboStep == 1)
+            {
+                canDoNextAttack = false;
+                comboStep = 2;
+                playerAnimator.SetTrigger("Attack2");
+            }
         }
     }
 
@@ -56,5 +71,23 @@ public class PlayerCombat : MonoBehaviour
     private void AttackRadiusOFF()
     {
         AttackRadius.SetActive(false);
+    }
+
+    public void EnableNextCombo()
+    {
+        canDoNextAttack = true;
+    }
+
+    public void ResetCombo()
+    {
+        isAttacking = false;
+        canDoNextAttack = false;
+        comboStep = 0;
+    }
+
+    private IEnumerator ComboResetDelay()
+    {
+        yield return new WaitForSeconds(comboResetTimer);
+        ResetCombo();
     }
 }
