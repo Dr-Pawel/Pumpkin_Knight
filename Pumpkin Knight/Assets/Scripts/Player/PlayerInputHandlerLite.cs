@@ -73,5 +73,10 @@ public class PlayerInputHandlerLite : MonoBehaviour
         rotateRightAction?.Disable();
         rotateLeftAction?.Disable();
     }
+
+    public void ResetJump()
+    {
+        JumpPressed = false;
+    }
 }
 

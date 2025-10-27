@@ -4,12 +4,18 @@ public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    [SerializeField] private bool groundedPlayer;
+    [SerializeField] private Animator animator;
 
     [Header("Movement Settings")]
     public float playerSpeed = 5.0f;
     public float jumpHeight = 1.5f;
     public float gravityValue = -9.81f;
+
+    [Header("Grounded settings")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private LayerMask groundMask;
 
     [Header("Camera")]
     Vector3 camForward;
@@ -22,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        groundedPlayer = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         HandleMovement();
     }
 
@@ -30,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         GetCameraDirection();
         var input = PlayerInputHandlerLite.Instance;
         Vector2 moveInput = input.MoveInput;
-        groundedPlayer = controller.isGrounded;
+        //groundedPlayer = controller.isGrounded;
 
         Vector3 move = camForward * moveInput.y + camRight * moveInput.x;
         move.Normalize();
@@ -40,11 +47,18 @@ public class PlayerMovement : MonoBehaviour
         if (move != Vector3.zero)
         {
             transform.forward = move;
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
 
         if (input.JumpPressed && groundedPlayer)
         {
+            animator.SetTrigger("Jump");
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue);
+            input.ResetJump();
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
