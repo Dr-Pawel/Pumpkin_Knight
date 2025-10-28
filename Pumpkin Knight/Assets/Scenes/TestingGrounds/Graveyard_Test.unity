@@ -14289,7 +14289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4624171817845998622, guid: 086184ea0a17d4f4fa520f37844ef955, type: 3}
       propertyPath: m_Name
-      value: TestPlayer 1
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5862009840984183926, guid: 086184ea0a17d4f4fa520f37844ef955, type: 3}
       propertyPath: m_Mesh
