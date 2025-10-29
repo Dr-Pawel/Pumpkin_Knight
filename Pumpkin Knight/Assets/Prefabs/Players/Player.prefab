@@ -91,8 +91,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329484306510042820}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27451092, y: 0.00000003333833, z: -0.000000009517356, w: 0.961584}
-  m_LocalPosition: {x: 0, y: 2.8544505, z: -4.5919843}
+  m_LocalRotation: {x: 0.2078027, y: -0.0000000029427338, z: 6.251547e-10, w: 0.9781708}
+  m_LocalPosition: {x: 0.0000000042154618, y: 0.31174636, z: -0.700614}
   m_LocalScale: {x: 0.81900084, y: 0.81900084, z: 0.81900084}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2515,7 +2515,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7084742, y: 0.40758443, z: 18.257181}
-  m_LocalScale: {x: 1.221, y: 1.221, z: 1.221}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3044367258027252325}
@@ -4511,6 +4511,7 @@ GameObject:
   - component: {fileID: 471921844964158953}
   - component: {fileID: 5318426774406039565}
   - component: {fileID: 9105044937231339174}
+  - component: {fileID: 2083003488261712110}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -4526,8 +4527,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8808907229548723852}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27451092, y: 0.000000034700587, z: -0.000000014289203, w: 0.96158403}
-  m_LocalPosition: {x: 0, y: 2.8544505, z: -4.5919843}
+  m_LocalRotation: {x: 0.2078027, y: -0.000000002942735, z: 6.251549e-10, w: 0.97817075}
+  m_LocalPosition: {x: 0, y: 3.4852839, z: -5.6068125}
   m_LocalScale: {x: 0.81900084, y: 0.81900084, z: 0.81900084}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4743,6 +4744,45 @@ MonoBehaviour:
         DecelTime: 0
   PlayerIndex: -1
   AutoEnableInputs: 1
+--- !u!114 &2083003488261712110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808907229548723852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe43d662878a7c43bcd44d43c9e2094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  IgnoreTag: 
+  TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  MinimumDistanceFromTarget: 0.3
+  AvoidObstacles:
+    Enabled: 1
+    DistanceLimit: 0
+    MinimumOcclusionTime: 0
+    CameraRadius: 0.4
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Strategy: 2
+    MaximumEffort: 4
+    SmoothingTime: 0
+    Damping: 0.4
+    DampingWhenOccluded: 0.2
+  ShotQualityEvaluation:
+    Enabled: 0
+    OptimalDistance: 10
+    NearLimit: 5
+    FarLimit: 30
+    MaxQualityBoost: 0.2
 --- !u!1 &8822614248473345486
 GameObject:
   m_ObjectHideFlags: 0
