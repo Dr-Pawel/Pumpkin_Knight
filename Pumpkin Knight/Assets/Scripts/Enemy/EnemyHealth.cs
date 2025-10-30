@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     [SerializeField] private int maxHealth; 
+    [SerializeField] private CapsuleCollider capsule;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class EnemyHealth : Health
         if (CurrentHealth <= 0)
         {
             Die();
+            capsule.enabled = false;
         }
     }
 }

@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7858933492693052540}
   maxHealth: 40
+  capsule: {fileID: 1401006823139724662}
 --- !u!1001 &6561327689533520167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,6 +181,10 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 37f7649b45775414ba10d75e3fbd5225, type: 2}
     - target: {fileID: 3899570384704886107, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454561532577064982, guid: 138bea4fcc575f24bb71a706968042c1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

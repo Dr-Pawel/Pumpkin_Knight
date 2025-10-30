@@ -23,6 +23,9 @@ public class PlayerInputHandlerLite : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);

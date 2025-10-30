@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed = 5.0f;
     public float jumpHeight = 1.5f;
     public float gravityValue = -9.81f;
+    public bool canMove { get; set; } = true;
 
     [Header("Grounded settings")]
     [SerializeField] private Transform groundCheck;
@@ -34,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement()
     {
+        if(!canMove)
+        {
+            animator.SetBool("isMoving", false);
+            return;
+        }
         GetCameraDirection();
         var input = PlayerInputHandlerLite.Instance;
         Vector2 moveInput = input.MoveInput;
@@ -43,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         move.Normalize();
         Vector3 finalMove = move * playerSpeed + playerVelocity;
         controller.Move(finalMove * Time.deltaTime);
+
 
         if (move != Vector3.zero)
         {
