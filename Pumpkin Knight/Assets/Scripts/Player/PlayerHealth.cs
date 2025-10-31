@@ -1,9 +1,11 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : Health
 {
     [SerializeField] PlayerHealthBar healthBar;
     [SerializeField] public int maxHealth;
+    [SerializeField] TextMeshProUGUI healthNumber;
 
     private void Awake()
     {
@@ -15,6 +17,7 @@ public class PlayerHealth : Health
 
         CurrentHealth -= amount;
         Debug.Log($"{gameObject.name} took {amount} damage! ({CurrentHealth}/{maxHealth})");
+        healthNumber.text = CurrentHealth.ToString();
 
         if (CurrentHealth <= 0)
         {
