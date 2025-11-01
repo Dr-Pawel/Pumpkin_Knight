@@ -7,6 +7,12 @@ public class worldMap : MonoBehaviour
     [SerializeField] private string cryptLevel;
     [SerializeField] private string GraveyardLevel;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void LoadCryptLevel()
     {
         SceneManager.LoadScene(cryptLevel);
