@@ -14,12 +14,15 @@ public class PlayerInputHandlerLite : MonoBehaviour
     private InputAction attackAction;
     private InputAction rotateLeftAction;
     private InputAction rotateRightAction;
+    private InputAction PauseAction;
 
     public Vector2 MoveInput { get; private set; }
     public bool JumpPressed { get; private set; }
     public bool AttackTriggered { get; private set; }
     public bool  RotateLeftTriggered { get; private set; }
     public bool RotateRightTriggered { get; private set; }
+    public bool PauseTriggered { get; private set; }
+
 
     private void Awake()
     {
@@ -39,6 +42,7 @@ public class PlayerInputHandlerLite : MonoBehaviour
         attackAction = map.FindAction("Attack");
         rotateLeftAction = map.FindAction("RotateLeft");
         rotateRightAction = map.FindAction("RotateRight");
+        PauseAction = map.FindAction("Pause");
 
         // Register actions
         moveAction.performed += ctx => MoveInput = ctx.ReadValue<Vector2>();
@@ -55,6 +59,9 @@ public class PlayerInputHandlerLite : MonoBehaviour
 
         rotateRightAction.performed += ctx => RotateRightTriggered = true;
         rotateRightAction.canceled += ctx => RotateRightTriggered = false;
+
+        PauseAction.performed += ctx => PauseTriggered = true;
+        PauseAction.canceled += ctx => PauseTriggered = false;
     }
 
     private void OnEnable()
@@ -64,6 +71,7 @@ public class PlayerInputHandlerLite : MonoBehaviour
         attackAction?.Enable();
         rotateRightAction?.Enable();
         rotateLeftAction?.Enable();
+        PauseAction?.Enable();
     }
 
     private void OnDisable()
@@ -73,11 +81,16 @@ public class PlayerInputHandlerLite : MonoBehaviour
         attackAction?.Disable();
         rotateRightAction?.Disable();
         rotateLeftAction?.Disable();
+        PauseAction?.Disable();
     }
 
     public void ResetJump()
     {
         JumpPressed = false;
+    }
+    public void ResetPause()
+    {
+        PauseTriggered = false;
     }
 }
 

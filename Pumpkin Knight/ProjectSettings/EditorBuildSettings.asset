@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/TestingGrounds/00_MainMenu.unity
     guid: e0c42516d584eea4c898a3c914dd4fd8
   - enabled: 1
+    path: Assets/Scenes/TestingGrounds/00_WorldMap.unity
+    guid: b54bfde289fc4544ebd883401e40bea1
+  - enabled: 1
     path: Assets/Scenes/TestingGrounds/01_Tutorial.unity
     guid: e256d34513fb72e42910ebbcf3dc3ab5
+  - enabled: 1
+    path: Assets/Scenes/TestingGrounds/02_Graveyard.unity
+    guid: 32bfaaa6a732dfb41a2e70fc58cd09b6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

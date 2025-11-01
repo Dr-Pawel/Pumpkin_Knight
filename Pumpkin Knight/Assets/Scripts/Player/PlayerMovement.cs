@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundDistance = 0.4f;
     [SerializeField] private LayerMask groundMask;
 
+    [Header("Pause")]
+    public bool isPaused { get; set; }
+    public GameObject pauseMenu;
+
     [Header("Camera")]
     Vector3 camForward;
     Vector3 camRight;
@@ -31,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         groundedPlayer = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         HandleMovement();
+        PauseMenu();
     }
 
     private void HandleMovement()
@@ -83,5 +88,31 @@ public class PlayerMovement : MonoBehaviour
 
         camForward.Normalize();
         camRight.Normalize();
+    }
+
+    public void PauseMenu()
+    {
+        var input = PlayerInputHandlerLite.Instance;
+        if (input.PauseTriggered)
+        {
+            if(!isPaused)
+            {
+                isPaused = true;
+                Time.timeScale = 0;
+                pauseMenu.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                input.ResetPause();
+            }
+            else
+            {
+                isPaused = false;
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                input.ResetPause();
+            }
+        }
     }
 }
