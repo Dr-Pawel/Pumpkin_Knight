@@ -35031,13 +35031,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate_Graveyard Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3605004325673401064, guid: 113bb923d5db6914ea6bd74a4bf4d5d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4128777183431893074, guid: 113bb923d5db6914ea6bd74a4bf4d5d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.2615604
       objectReference: {fileID: 0}
     - target: {fileID: 4128777183431893074, guid: 113bb923d5db6914ea6bd74a4bf4d5d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6540203
+      value: -1.547
       objectReference: {fileID: 0}
     - target: {fileID: 4128777183431893074, guid: 113bb923d5db6914ea6bd74a4bf4d5d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38257,7 +38261,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: a26c1947bd6054a48a4080ced5f1ca64, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 699d43738cbe9ce4285ab62e56af0c83, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &2132224514
 Transform:
@@ -39108,8 +39112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329484307128903897}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27422473, y: -0.04390704, z: 0.012534493, w: 0.96058106}
-  m_LocalPosition: {x: 0.5114939, y: 3.4852848, z: -5.583433}
+  m_LocalRotation: {x: 0.27351475, y: 0.08184937, z: -0.023366187, w: 0.95809424}
+  m_LocalPosition: {x: -0.9510306, y: 3.4852848, z: -5.525567}
   m_LocalScale: {x: 0.81900084, y: 0.81900084, z: 0.81900084}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39811,7 +39815,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4624171818313742851}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.35
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -41735,8 +41739,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4624171818313742851}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.25666234, z: -0, w: 0.9665012}
-  m_LocalPosition: {x: -20.958447, y: 24.995401, z: -0.92291605}
+  m_LocalRotation: {x: -0, y: 0.1283131, z: -0, w: 0.9917338}
+  m_LocalPosition: {x: -21, y: 24.9, z: -0.5999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41751,7 +41755,7 @@ Transform:
   - {fileID: 771961813709900786}
   - {fileID: 347948895}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 29.744, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 14.744, z: 0}
 --- !u!4 &4563895784919339341
 Transform:
   m_ObjectHideFlags: 0
@@ -43706,7 +43710,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.29
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.1
@@ -44460,8 +44464,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8808907230032953489}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27422467, y: -0.0439071, z: 0.012534492, w: 0.96058106}
-  m_LocalPosition: {x: 0.5114939, y: 3.4852848, z: -5.583433}
+  m_LocalRotation: {x: 0.2735147, y: 0.081849284, z: -0.023366163, w: 0.9580942}
+  m_LocalPosition: {x: -0.9510306, y: 3.4852848, z: -5.525567}
   m_LocalScale: {x: 0.81900084, y: 0.81900084, z: 0.81900084}
   m_ConstrainProportionsScale: 0
   m_Children: []

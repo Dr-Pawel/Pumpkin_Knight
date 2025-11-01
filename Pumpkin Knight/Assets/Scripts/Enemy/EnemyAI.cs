@@ -29,21 +29,16 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        if(health.isDead == true)
-        {
-            return;
-        }
+        if (health.isDead) return;
         if (target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player");
             if (target != null) playerPosition = target.transform;
             return;
         }
-        if(enemyAgent.isStopped)
-        {
-            animator.SetBool("isMoving", false);
-        }
+
         distanceToPlayer = Vector3.Distance(enemyAgent.transform.position, playerPosition.position);
+
         if (distanceToPlayer <= attackDistance)
         {
             AttackPlayer();
@@ -51,6 +46,11 @@ public class EnemyAI : MonoBehaviour
         else if (distanceToPlayer < ChaseDistance)
         {
             ChasePlayer();
+        }
+        else 
+        {
+            enemyAgent.isStopped = true;
+            animator.SetBool("isMoving", false);
         }
     }
 
