@@ -6,6 +6,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private string WorldMap;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(sceneName);

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class worldMap : MonoBehaviour
 {
+    [SerializeField] private string MainMenuScene;
     [SerializeField] private string cryptLevel;
     [SerializeField] private string GraveyardLevel;
 
@@ -20,5 +21,9 @@ public class worldMap : MonoBehaviour
     public void LoadGraveyardLevel()
     {
         SceneManager.LoadScene(GraveyardLevel);
+    }
+    public void LoadMainMenuLevel()
+    {
+        SceneManager.LoadScene(MainMenuScene);
     }
 }
