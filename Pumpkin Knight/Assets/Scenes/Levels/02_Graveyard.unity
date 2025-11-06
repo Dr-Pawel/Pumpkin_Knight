@@ -39960,12 +39960,12 @@ MonoBehaviour:
       Enabled: 1
       YOffset: 1.4
     Strategy: 2
-    MaximumEffort: 2
-    SmoothingTime: 0.2
-    Damping: 0.4
-    DampingWhenOccluded: 0.2
+    MaximumEffort: 5
+    SmoothingTime: 0.1
+    Damping: 4
+    DampingWhenOccluded: 3
   ShotQualityEvaluation:
-    Enabled: 0
+    Enabled: 1
     OptimalDistance: 10
     NearLimit: 5
     FarLimit: 30

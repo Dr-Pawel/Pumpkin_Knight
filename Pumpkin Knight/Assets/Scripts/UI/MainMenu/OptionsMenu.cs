@@ -12,7 +12,6 @@ public class OptionsMenu : MonoBehaviour
     public Slider MasterVolumeSlider;
     public Toggle FulscreenToggle;
     public TMP_Dropdown GraphicsDropdown;
-    public TMP_Dropdown ResolutionDropDown;
 
     private void Start()
     {
